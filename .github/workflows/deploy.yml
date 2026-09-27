@@ -44,7 +44,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 65002
           script: |
-            cd /var/www/laravel-app
+            cd /home/u628885034/domains/darkcyan-grouse-421601.hostingersite.com/public_html
             
             # Put app in maintenance mode
             php artisan down
