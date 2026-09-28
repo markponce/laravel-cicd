@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -7,6 +8,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/hello', function () {
-    return "hi! ponce";
+Route::get('/hello', function (Request $request) {
+    // request()->query()
+    $name = $request->query("name", "world");
+
+    return "hello $name";
 });
