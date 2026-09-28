@@ -32,6 +32,9 @@ jobs:
       - name: Execute tests
         run: php artisan test
 
+      -name: test
+        run ssh -i ${{ secrets.SERVER_SSH_KEY }} -p ${{ secrets.SERVER_PORT }} ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}
+
   # Phase 2: Continuous Deployment (CD)
   deploy:
     needs: tests # Only runs if the 'tests' job passes
